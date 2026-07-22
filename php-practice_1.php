@@ -44,7 +44,7 @@ $kanto = ['神奈川県', '東京都', '栃木県', '千葉県', '群馬県', '�
 
 echo $kanto[2] . 'と' . $kanto[3]  . 'は関東地方の都道府県です。';
 
-/*Q7*/
+/*Q7*/ //【再提出】※foreachを使用。
 $array = [
   '東京都' => '新宿区',
   '神奈川県' => '横浜市',
@@ -55,7 +55,9 @@ $array = [
   '茨城県' => '水戸市'
 ];
 
-echo $array['東京都'] . "\n" . $array['神奈川県'] . "\n" . $array['千葉県'] . "\n" . $array['栃木県'] . "\n" . $array['群馬県'] . "\n" . $array['茨城県'];
+foreach ($array as $x => $y) {
+        echo  $y  . "\n";
+}
 
 /*Q8 ※Q7の$arrayの記入を省略しております。プログラム実行の際はQ7の$arrayを追記ください。*/
 foreach ($array as $x => $y) {
@@ -64,16 +66,19 @@ foreach ($array as $x => $y) {
     }
 }
 
-/*Q9 ※Q7の$arrayの記入を省略しております。プログラム実行の際はQ7の$arrayを追記ください。*/
+/*Q9 */ //【再提出】※愛知県も大阪府も県庁所在地をバリューとする。
 $array += [
-    '愛知県' => '',
-    '大阪府' => ''
+    '愛知県' => '名古屋市',
+    '大阪府' => '大阪府'
 ];
-foreach ($array as $x => $y) {
-    if ($x && $y) {
-        echo "$x" . 'の県庁所在地は、' . "$y" .'です。' . "\n";
+
+foreach ($array as $x => &$y) {
+    if ($x === '愛知県' || $x === '大阪府') {
+        echo $x . 'は関東地方ではありません。' . "\n";
+
     } else {
-        echo "$x" . 'は関東地方ではありません。' . "\n";
+        echo $x . 'の県庁所在地は、' . $y .'です。' . "\n";
+
     }
 }
 
@@ -96,11 +101,10 @@ function calcTaxInPrice ($price) {
 $taxInPrice = calcTaxInPrice ($price);
 echo "$price" . '円の商品の税込価格は' . "$taxInPrice" . '円です。' . "\n" ;
 
-/*Q12*/
+/*Q12*/ //再提出
 function distinguishNum ($num) {
-    $numJudge = $num % 2;
 
-    if ($numJudge === 0) {
+    if ($num % 2 === 0) {
         echo "$num" . 'は偶数です。' . "\n";
     } else {
         echo "$num" . 'は奇数です。' . "\n";
