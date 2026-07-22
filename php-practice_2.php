@@ -22,16 +22,17 @@ for ( $i = 1 ; $i <= 100 ; $i++ ) {
 
   /* 問題2 */
   for ( $i = 0 ; $i <= 2 ; $i++ ) {
-      $number = $i + 1;
-      echo $number.'番目の'.$personalInfos[$i]['name'] . 'さんのメールアドレスは' .$personalInfos[$i]['mail'] . 'です。' . "\n";
+    echo $i + 1 . '番目の' . $personalInfos[$i]['name'] . 'さんのメールアドレスは' . $personalInfos[$i]['mail'] . 'です。' . "\n";
+
   }
 
-  /* 問題3 */
+  /* 問題3 */ //unset消しました。
+  $ageList = [25, 30, 18];
+
   foreach ($personalInfos as $key => &$personalInfo ) {
       $personalInfo['age'] = $ageList[$key];
   }
 
-  unset($personalInfo);
   var_dump($personalInfos);
 
 /*Q3*/
