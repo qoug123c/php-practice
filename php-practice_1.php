@@ -55,7 +55,7 @@ $array = [
   '茨城県' => '水戸市'
 ];
 
-foreach ($array as $x => $y) {
+foreach ($array as $y) {
         echo  $y  . "\n";
 }
 
